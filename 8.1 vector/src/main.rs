@@ -2,7 +2,7 @@ use std::vec;
 
 fn main() {
     // 使用Vec::new()创建一个空的vector
-    let v: Vec<i32> = Vec::new();
+    let v: Vec<i32> = Vec::new(); // rust需要显式声明类型，因为vector在heap上分配内存
 
     // 使用宏vec!创建带初始值的vector
     let mut v = vec![1, 2, 3]; // rust会自动类型推导
@@ -27,4 +27,21 @@ fn main() {
         *i += 50; // *i表示解引用，获取i指向的值
         println!("{}", i);
     }
+
+    // vector和enum的结合使用
+    // 利用可附加数据类型的enum特性
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    // 创建一个可以存放不同类型的值的vector
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    //注：在不知道或不详尽vector存储的元素类型时，用trait对象Box<dyn Trait>来存储不同类型的值
 }
