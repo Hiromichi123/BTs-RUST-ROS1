@@ -72,7 +72,7 @@ fn returns_summarizable() -> impl Summary {
     }
 }
 
-// 使用Trait Bound有条件的实现方法
+// 使用Trait Bound有条件的实现方法，即覆盖实现（blanket implementation）
 pub struct Pair<T> {
     x: T,
     y: T,
@@ -85,20 +85,5 @@ impl<T: Display + PartialOrd> Pair<T> {
         } else {
             println!("The largest member is y = {}", self.y);
         }
-    }
-}
-
-// 为所有实现了Summary的类型实现一个默认的方法
-pub trait Summary2 {
-    fn default_summarize() -> String {
-        String::from("(Read more...)")
-    }
-
-    fn summarize_author(&self) -> String; // 需要条件实现的默认方法
-}
-// 为实现了Summary2的类型实现一个默认的方法
-impl Summary2 for Tweet {
-    fn summarize_author(&self) -> String {
-        format!("@{}", self.username)
     }
 }
