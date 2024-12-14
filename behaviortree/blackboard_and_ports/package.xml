@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>blackboard_and_ports</name>
+  <version>0.0.0</version>
+  <description>TODO: none</description>
+  <maintainer email="2271612727@qq.com">Hiromichi123</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>behaviortree_cpp_v3</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
