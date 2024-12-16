@@ -3,8 +3,8 @@
 
 #include<iostream>
 #include<string>
-#include<behaviortree_cpp_v3/behavior_tree.h>
-#include<behaviortree_cpp_v3/action_node.h>
+#include<behaviortree_cpp/behavior_tree.h>
+#include<behaviortree_cpp/action_node.h>
 using namespace BT;
 
 struct Position2D 
