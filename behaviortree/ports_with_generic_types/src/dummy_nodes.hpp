@@ -32,7 +32,7 @@ namespace BT
 class CalculateGoal: public SyncActionNode
 {
     public:
-        CalculateGoal(const std::string& name, const NodeConfiguration& config): SyncActionNode(name, config){}
+        CalculateGoal(const std::string& name, const NodeConfig& config): SyncActionNode(name, config){}
 
     static PortsList providedPorts(){
         return { OutputPort<Position2D>("goal") };
@@ -47,7 +47,7 @@ class CalculateGoal: public SyncActionNode
 
 class PrintTarget: public SyncActionNode{
     public:
-        PrintTarget(const std::string& name, const NodeConfiguration& config): SyncActionNode(name, config){}
+        PrintTarget(const std::string& name, const NodeConfig& config): SyncActionNode(name, config){}
 
         static PortsList providedPorts(){
             const char* description = "Simply print the goal on console...";
