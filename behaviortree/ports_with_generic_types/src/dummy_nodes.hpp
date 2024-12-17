@@ -7,15 +7,13 @@
 #include<behaviortree_cpp/action_node.h>
 using namespace BT;
 
-struct Position2D 
-{ 
+struct Position2D { 
   double x;
   double y; 
 };
 
 // 模版特化，将字符串转换为Position2D，必须显示声明命名空间BT
-namespace BT
-{
+namespace BT{
     template <> inline Position2D convertFromString(StringView str){
         auto parts = splitString(str, ';');
         if (parts.size() != 2){
@@ -29,8 +27,7 @@ namespace BT
     }
 }
 
-class CalculateGoal: public SyncActionNode
-{
+class CalculateGoal: public SyncActionNode{
     public:
         CalculateGoal(const std::string& name, const NodeConfig& config): SyncActionNode(name, config){}
 
